@@ -20,7 +20,6 @@ body:before {
 
 * {
   margin: 0;
-  padding: 0;
 }
 
 a {
@@ -56,6 +55,7 @@ p {
 
 main ul {
   list-style: none;
+  padding: 0;
 }
 
 main li {

@@ -21,3 +21,4 @@
 import Route from '@ioc:Adonis/Core/Route'
 
 Route.inertia('/', 'Pages/Home')
+Route.inertia('/about', 'Pages/About')

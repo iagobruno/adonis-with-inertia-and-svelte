@@ -1,4 +1,6 @@
 <script>
+  import { Link } from '@inertiajs/inertia-svelte'
+
   console.log('Hello dev!')
 
   let count = 1
@@ -18,7 +20,8 @@
     <button on:click={handleClick}>Click me</button>
     <span>Count: {count}</span>
 
-    <br><br>
+    <br>
+    <br>
     <ul>
       <li>
         The route for this page is defined inside <code>start/routes.ts</code> file
@@ -32,5 +35,8 @@
         If you run into problems, you can reach us on <a href="https://discord.gg/vDcEjq6?">Discord</a> or the <a href="https://forum.adonisjs.com/">Forum</a>.
       </li>
     </ul>
+    <br/>
+
+    <p>Go to <Link href="/about">about page</Link>.</p>
   </div>
 </main>
