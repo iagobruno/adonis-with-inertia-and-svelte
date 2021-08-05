@@ -55,14 +55,17 @@ Encore.addEntry('app', './resources/js/app.ts')
 */
 // See https://github.com/TypeStrong/ts-loader/blob/main/README.md#loader-options
 Encore.enableTypeScriptLoader((tsConfig) => {
-  tsConfig.onlyCompileBundledFiles = true
   tsConfig.transpileOnly = true
+  tsConfig.onlyCompileBundledFiles = true
   // Override TypeScript options
   tsConfig.compilerOptions = {
     'module': 'esnext',
     'target': 'es5',
     'esModuleInterop': true,
-    'removeComments': false
+    'allowJs': true,
+    'skipLibCheck': true,
+    'removeComments': Encore.isProduction(),
+    'sourceMap': !Encore.isProduction(),
   }
 })
 
@@ -74,9 +77,7 @@ Encore.addLoader({
     dev: !Encore.isProduction(),
     emitCss: true,
     // See https://github.com/sveltejs/svelte-preprocess
-    preprocess: sveltePreprocess({
-
-    }),
+    preprocess: sveltePreprocess({}),
   },
 })
 
